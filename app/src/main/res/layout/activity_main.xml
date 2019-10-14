@@ -96,7 +96,7 @@
         android:text="-" />
 
     <Button
-        android:id="@+id/buttonSubstract"
+        android:id="@+id/buttonDivide"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="325dp"
@@ -120,7 +120,7 @@
         android:text="0" />
 
     <Button
-        android:id="@+id/buttonclear"
+        android:id="@+id/buttonClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -128,7 +128,7 @@
         android:text="Clear" />
 
     <Button
-        android:id="@+id/button."
+        android:id="@+id/buttonDot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="225dp"
