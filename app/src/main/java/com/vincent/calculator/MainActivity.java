@@ -132,4 +132,88 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+ butMinus.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        if (editText.getText().length() !=0) {
+        valueOne = Float.parseFloat(editText.getText() + "");
+        subNumbers = true;
+        decNumbers = false;
+        editText.setText(null);
+        }
+        }
+        });
+
+        butMultiply.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        if (editText.getText().length() !=0) {
+        valueOne = Float.parseFloat(editText.getText() + "");
+        multNumbers = true;
+        decNumbers = false;
+        editText.setText(null);
+        }
+        }
+        });
+
+        butDivide.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        if (editText.getText().length() !=0) {
+        valueOne = Float.parseFloat(editText.getText() + "");
+        divNumbers = true;
+        decNumbers = false;
+        editText.setText(null);
+        }
+        }
+        });
+
+        butEquals.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        if(addNumbers || subNumbers || multNumbers || divNumbers){
+        valueTwo = Float.parseFloat(editText.getText() + "");
+        }
+
+        if(addNumbers){
+        editText.setText(valueOne + valueTwo + "");
+        addNumbers = false;
+        }
+        if(subNumbers){
+        editText.setText(valueOne - valueTwo + "");
+        subNumbers = false;
+        }
+        if(multNumbers){
+        editText.setText(valueOne * valueTwo + "");
+        multNumbers = false;
+        }
+        if(divNumbers){
+        editText.setText(valueOne / valueTwo + "");
+        divNumbers = false;
+        }
+        }
+        });
+
+        butClear.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        editText.setText("");
+        }
+        });
+
+        butDecimal.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v) {
+        if (decNumbers) {
+
+        } else {
+        editText.setText(editText.getText() + ".");
+        }
+        }
+        });
+        }
+
+
+        }
+
 
