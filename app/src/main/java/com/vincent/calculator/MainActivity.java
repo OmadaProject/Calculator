@@ -1,6 +1,12 @@
 package com.vincent.calculator;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -39,5 +45,91 @@ public class MainActivity extends AppCompatActivity {
         butClear = findViewById(R.id.buttonClear);
 
         editText = findViewById(R.id.textViewDisplay);
+
+
+        butOne.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"1");
+            }
+        });
+
+        butTwo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"2");
+            }
+        });
+
+        butThree.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"3");
+            }
+        });
+
+        butFour.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"4");
+            }
+        });
+
+        butFive.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"5");
+            }
+        });
+
+        butSix.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"6");
+            }
+        });
+
+        butSeven.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"7");
+            }
+        });
+
+        butEight.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"8");
+            }
+        });
+
+        butNine.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"9");
+            }
+        });
+
+        butZero.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editText.setText(editText.getText() +"0");
+            }
+        });
+
+        butPlus.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if (editText.getText().length() !=0) {
+                    valueOne = Float.parseFloat(editText.getText() + "");
+                    addNumbers = true;
+                    decNumbers = false;
+                    editText.setText(null);
+                }
+            }
+        });
     }
+
 }
+
+
