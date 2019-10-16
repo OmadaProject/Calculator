@@ -128,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
-}
+
+
 
  butMinus.setOnClickListener(new View.OnClickListener(){
 @Override
