@@ -1,31 +1,27 @@
 package com.vincent.calculator;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
-
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
-
-public class MainActivity extends AppCompatActivity {
-
-    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear;
+public class MainActivity extends AppCompatActivity
+{
+    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero,
+            butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, butSquare;
     TextView editText;
-
+    
     double valueOne = 0, valueTwo = 0;
-
-    boolean addNumbers, subNumbers, multNumbers, divNumbers, decNumbers;
+    
+    boolean addNumbers, subNumbers, multNumbers, divNumbers, decNumbers, squareNumber;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         butOne = findViewById(R.id.button1);
         butTwo = findViewById(R.id.button2);
         butThree = findViewById(R.id.button3);
@@ -43,177 +39,190 @@ public class MainActivity extends AppCompatActivity {
         butEquals = findViewById(R.id.buttonEquals);
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
-
+        butSquare = findViewById(R.id.buttonSquare);
         editText = findViewById(R.id.textViewDisplay);
-
-
+        
         butOne.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"1");
             }
         });
-
+        
         butTwo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"2");
             }
         });
-
+        
         butThree.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"3");
             }
         });
-
+        
         butFour.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"4");
             }
         });
-
+        
         butFive.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"5");
             }
         });
-
+        
         butSix.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"6");
             }
         });
-
+        
         butSeven.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"7");
             }
         });
-
+        
         butEight.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"8");
             }
         });
-
+        
         butNine.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"9");
             }
         });
-
+        
         butZero.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 editText.setText(editText.getText() +"0");
             }
         });
-
+        
         butPlus.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                if (editText.getText().length() !=0) {
-                    valueOne = Float.parseFloat(editText.getText() + "");
-                    addNumbers = true;
-                    decNumbers = false;
-                    editText.setText(null);
-                }
+            if (editText.getText().length() !=0) {
+                valueOne = Float.parseFloat(editText.getText() + "");
+                addNumbers = true;
+                decNumbers = false;
+                editText.setText(null);
+            }
             }
         });
-
-
-
-
- butMinus.setOnClickListener(new View.OnClickListener(){
+        
+        butMinus.setOnClickListener(new View.OnClickListener(){
 @Override
 public void onClick(View v){
-        if (editText.getText().length() !=0) {
-        valueOne = Float.parseFloat(editText.getText() + "");
-        subNumbers = true;
-        decNumbers = false;
-        editText.setText(null);
-        }
+            if (editText.getText().length() !=0) {
+                valueOne = Float.parseFloat(editText.getText() + "");
+                subNumbers = true;
+                decNumbers = false;
+                editText.setText(null);
+            }
         }
         });
-
+        
         butMultiply.setOnClickListener(new View.OnClickListener(){
 @Override
 public void onClick(View v){
-        if (editText.getText().length() !=0) {
-        valueOne = Float.parseFloat(editText.getText() + "");
-        multNumbers = true;
-        decNumbers = false;
-        editText.setText(null);
-        }
+            if (editText.getText().length() !=0) {
+                valueOne = Float.parseFloat(editText.getText() + "");
+                multNumbers = true;
+                decNumbers = false;
+                editText.setText(null);
+            }
         }
         });
-
+        
         butDivide.setOnClickListener(new View.OnClickListener(){
 @Override
 public void onClick(View v){
-        if (editText.getText().length() !=0) {
-        valueOne = Float.parseFloat(editText.getText() + "");
-        divNumbers = true;
-        decNumbers = false;
-        editText.setText(null);
-        }
+            if (editText.getText().length() !=0) {
+                valueOne = Float.parseFloat(editText.getText() + "");
+                divNumbers = true;
+                decNumbers = false;
+                editText.setText(null);
+            }
         }
         });
-
+        
+        butSquare.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+            if (editText.getText().length() !=0) {
+                valueOne = Float.parseFloat(editText.getText() + "");
+                squareNumber= true;
+                decNumbers = false;
+                editText.append("²");
+            }
+            }
+        });
+        
         butEquals.setOnClickListener(new View.OnClickListener(){
-@Override
-public void onClick(View v){
-        if(addNumbers || subNumbers || multNumbers || divNumbers){
-        valueTwo = Float.parseFloat(editText.getText() + "");
-        }
-
-        if(addNumbers){
-        editText.setText(valueOne + valueTwo + "");
-        addNumbers = false;
-        }
-        if(subNumbers){
-        editText.setText(valueOne - valueTwo + "");
-        subNumbers = false;
-        }
-        if(multNumbers){
-        editText.setText(valueOne * valueTwo + "");
-        multNumbers = false;
-        }
-        if(divNumbers){
-        editText.setText(valueOne / valueTwo + "");
-        divNumbers = false;
-        }
-        }
+            @Override
+            public void onClick(View v){
+                
+                if(addNumbers || subNumbers || multNumbers || divNumbers){
+                    valueTwo = Float.parseFloat(editText.getText() + "");
+                }
+                
+                if(addNumbers){
+                    editText.setText(valueOne + valueTwo + "");
+                    addNumbers = false;
+                }
+                
+                if(subNumbers){
+                    editText.setText(valueOne - valueTwo + "");
+                    subNumbers = false;
+                }
+                
+                if(multNumbers){
+                    editText.setText(valueOne * valueTwo + "");
+                    multNumbers = false;
+                }
+                
+                if(divNumbers){
+                    editText.setText(valueOne / valueTwo + "");
+                    divNumbers = false;
+                }
+                
+                if(squareNumber){
+                    editText.setText(valueOne * valueOne + "");
+                    squareNumber = false;
+                }
+            }
         });
-
+        
         butClear.setOnClickListener(new View.OnClickListener(){
-@Override
-public void onClick(View v){
-        editText.setText("");
-        }
+            @Override
+            public void onClick(View v){
+                editText.setText("");
+            }
         });
-
+        
         butDecimal.setOnClickListener(new View.OnClickListener(){
-@Override
-public void onClick(View v) {
-        if (decNumbers) {
-
-        } else {
-        editText.setText(editText.getText() + ".");
-        }
-        }
+            @Override
+            public void onClick(View v) {
+                if (decNumbers) {
+                    
+                } else {
+                    editText.setText(editText.getText() + ".");
+                }
+            }
         });
-        }
-
-
-        }
-
-
+    }
+}
