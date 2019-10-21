@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear;
+    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, enadiaxi;
     TextView editText;
 
     double valueOne = 0, valueTwo = 0;
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         butEquals = findViewById(R.id.buttonEquals);
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
+        enadiaxi = findViewById(R.id.enadiax);
 
         editText = findViewById(R.id.textViewDisplay);
 
@@ -126,6 +127,17 @@ public class MainActivity extends AppCompatActivity {
                     decNumbers = false;
                     editText.setText(null);
                 }
+                enadiaxi.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        if (editText.getText().length() !=0) {
+                            valueOne = Float.parseFloat(editText.getText() + "");
+                            editText.setText(1/valueOne);
+                        }
+                    }
+                });
+
+               
             }
         });
 
