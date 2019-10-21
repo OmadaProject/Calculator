@@ -44,8 +44,16 @@ public class MainActivity extends AppCompatActivity {
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
         enadiaxi = findViewById(R.id.enadiaxi);
-
+Memorydisplay = (TextView) findViewById(R.id.memoryTextView); 
+        mplus = (TextView) findViewById(R.id.Mplus); 
+        mminus = (TextView) findViewById(R.id.Mdeduct); 
+        mclear = (TextView) findViewById(R.id.MC); 
+        mrecall = (TextView) findViewById(R.id.MR);
         editText = findViewById(R.id.textViewDisplay);
+        
+        ArrayList<Double> tempfigure = new ArrayList<Double>(); 
+    double tempfigure1;
+    double memory1 = 0;
 
 
         butOne.setOnClickListener(new View.OnClickListener(){
