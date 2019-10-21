@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         butEquals = findViewById(R.id.buttonEquals);
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
-        enadiaxi = findViewById(R.id.enadiax);
+        enadiaxi = findViewById(R.id.enadiaxi);
 
         editText = findViewById(R.id.textViewDisplay);
 
