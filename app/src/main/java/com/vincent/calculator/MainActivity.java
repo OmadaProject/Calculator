@@ -14,7 +14,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, butSqrt;
+
+    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, enadiaxi, butSqrt;
+
+
     TextView editText;
 
     double valueOne = 0, valueTwo = 0;
@@ -44,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         butEquals = findViewById(R.id.buttonEquals);
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
+        enadiaxi = findViewById(R.id.enadiax);
         butSqrt = findViewById(R.id.buttonSqrt);
+
+
 
         editText = findViewById(R.id.textViewDisplay);
 
@@ -128,6 +134,17 @@ public class MainActivity extends AppCompatActivity {
                     decNumbers = false;
                     editText.setText(null);
                 }
+                enadiaxi.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        if (editText.getText().length() !=0) {
+                            valueOne = Float.parseFloat(editText.getText() + "");
+                            editText.setText(1/valueOne);
+                        }
+                    }
+                });
+
+               
             }
         });
 
@@ -206,8 +223,8 @@ public void onClick(View v){
         divNumbers = false;
         }
         if(sqrtNumbers){
-
-            editText.setText(Math.sqrt(valueOne) + "");
+        editText.setText(Math.sqrt(valueOne) + "");
+        sqrtNumbers = false;
         }
         }
         });
