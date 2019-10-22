@@ -7,16 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity
 {
-    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero,
-            butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, butSquare;
+
+    Button butOne, butTwo, butThree, butFour, butFive, butSix, butSeven, butEight, butNine, butZero, butPlus, butMinus, butMultiply, butDivide, butEquals, butDecimal, butClear, enadiaxi, butSqrt, butSquare;
+
+
+
     TextView editText;
     
     double valueOne = 0, valueTwo = 0;
-    
-    boolean addNumbers, subNumbers, multNumbers, divNumbers, decNumbers, squareNumber;
-    
+
+    boolean addNumbers, subNumbers, multNumbers, divNumbers, decNumbers, sqrtNumbers, squareNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +43,12 @@ public class MainActivity extends AppCompatActivity
         butEquals = findViewById(R.id.buttonEquals);
         butDecimal = findViewById(R.id.buttonDot);
         butClear = findViewById(R.id.buttonClear);
+
+        enadiaxi = findViewById(R.id.enadiax);
+        butSqrt = findViewById(R.id.buttonSqrt);
         butSquare = findViewById(R.id.buttonSquare);
+
+
         editText = findViewById(R.id.textViewDisplay);
         
         butOne.setOnClickListener(new View.OnClickListener(){
@@ -115,24 +124,41 @@ public class MainActivity extends AppCompatActivity
         butPlus.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-            if (editText.getText().length() !=0) {
-                valueOne = Float.parseFloat(editText.getText() + "");
-                addNumbers = true;
-                decNumbers = false;
-                editText.setText(null);
-            }
+
+  
+                if (editText.getText().length() !=0) {
+                    valueOne = Float.parseFloat(editText.getText() + "");
+                    addNumbers = true;
+                    decNumbers = false;
+                    editText.setText(null);
+                }
+                enadiaxi.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        if (editText.getText().length() !=0) {
+                            valueOne = Float.parseFloat(editText.getText() + "");
+                            editText.setText(1/valueOne);
+                        }
+                    }
+                });
+
+               
             }
         });
-        
+
+
+
+
+
         butMinus.setOnClickListener(new View.OnClickListener(){
 @Override
 public void onClick(View v){
             if (editText.getText().length() !=0) {
-                valueOne = Float.parseFloat(editText.getText() + "");
-                subNumbers = true;
-                decNumbers = false;
-                editText.setText(null);
-            }
+            valueOne = Float.parseFloat(editText.getText() + "");
+            subNumbers = true;
+            decNumbers = false;
+            editText.setText(null);
+        }
         }
         });
         
@@ -159,7 +185,7 @@ public void onClick(View v){
             }
         }
         });
-        
+
         butSquare.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -172,39 +198,50 @@ public void onClick(View v){
             }
         });
         
-        butEquals.setOnClickListener(new View.OnClickListener(){
+        
+        butSqrt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                
-                if(addNumbers || subNumbers || multNumbers || divNumbers){
-                    valueTwo = Float.parseFloat(editText.getText() + "");
+            public void onClick(View v) {
+                if (editText.getText().length() != 0) {
+                    valueOne = Float.parseFloat(editText.getText() + "");
+                    sqrtNumbers = true;
+                    decNumbers = false;
+                    editText.setText(null);
                 }
-                
-                if(addNumbers){
-                    editText.setText(valueOne + valueTwo + "");
-                    addNumbers = false;
-                }
-                
-                if(subNumbers){
-                    editText.setText(valueOne - valueTwo + "");
-                    subNumbers = false;
-                }
-                
-                if(multNumbers){
-                    editText.setText(valueOne * valueTwo + "");
-                    multNumbers = false;
-                }
-                
-                if(divNumbers){
-                    editText.setText(valueOne / valueTwo + "");
-                    divNumbers = false;
-                }
-                
-                if(squareNumber){
+            }
+        });
+
+        butEquals.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View v){
+        if(addNumbers || subNumbers || multNumbers || divNumbers){
+        valueTwo = Float.parseFloat(editText.getText() + "");
+        }
+
+        if(addNumbers){
+        editText.setText(valueOne + valueTwo + "");
+        addNumbers = false;
+        }
+        if(subNumbers){
+        editText.setText(valueOne - valueTwo + "");
+        subNumbers = false;
+        }
+        if(multNumbers){
+        editText.setText(valueOne * valueTwo + "");
+        multNumbers = false;
+        }
+        if(divNumbers){
+        editText.setText(valueOne / valueTwo + "");
+        divNumbers = false;
+        }
+        if(sqrtNumbers){
+        editText.setText(Math.sqrt(valueOne) + "");
+        sqrtNumbers = false;
+        }
+        if(squareNumber){
                     editText.setText(valueOne * valueOne + "");
                     squareNumber = false;
                 }
-            }
         });
         
         butClear.setOnClickListener(new View.OnClickListener(){
@@ -223,6 +260,7 @@ public void onClick(View v){
                     editText.setText(editText.getText() + ".");
                 }
             }
+
         });
     }
 }

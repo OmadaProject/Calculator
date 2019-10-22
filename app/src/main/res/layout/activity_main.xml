@@ -150,9 +150,17 @@
         android:id="@+id/buttonEquals"
         android:layout_width="151dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="225dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="240dp"
         android:text="=" />
+
+    <Button
+        android:id="@+id/buttonSqrt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="325dp"
+        android:layout_marginTop="240dp"
+        android:text="√x" />
 
     <TextView
         android:id="@+id/textViewDisplay"
@@ -168,5 +176,23 @@
         android:layout_marginLeft="300dp"
         android:layout_marginTop="100dp"
         android:text="TeamProject" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/x" />
 
 </RelativeLayout>
